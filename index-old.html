@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Cutting in.</title>
+  <title>Whale Reader</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,35 +13,15 @@
     html, body {
       height: 100%;
       overflow: hidden;
-      background-color: #0000aa;
+      background-color: #0000aa; /* bad blue background */
       font-family: Arial, sans-serif;
     }
 
-    /* NEW: title block at top */
-    #title-bar {
-      width: 100%;
-      padding: 12px 16px;
-      color: #ffff00;
-      background: #0000aa;
-    }
-
-    #title-text {
-      font-size: 26px;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
-
-    #author-text {
-      font-size: 14px;
-      letter-spacing: 0.05em;
-    }
-
-    /* main content now starts below title */
-    #main {
+    #container {
       display: flex;
-      height: calc(100vh - 52px); /* subtract approximate title bar height */
+      height: 100vh;
       width: 100vw;
-      color: #ffff00;
+      color: #ffff00; /* yellow text */
     }
 
     #left {
@@ -125,100 +105,94 @@
   </style>
 </head>
 <body>
-  <!-- NEW TITLE BAR -->
-  <div id="title-bar">
-    <div id="title-text">Cutting in</div>
-    <div id="author-text">Skylar Sargent Walters</div>
-  </div>
-
-  <!-- MAIN CONTENT (camera + essays) -->
-  <div id="main">
+  <div id="container">
+    <!-- LEFT -->
     <div id="left">
       <h1 style="margin-bottom:10px; color:#ffff00; font-size:20px;"></h1>
       <video id="video" autoplay muted playsinline></video>
       <div id="controls">
-        <button id="startBtn">Start Camera &amp; Whale</button>
+        <button id="startBtn">Start Camera</button>
       </div>
       <div id="status">
-        Bring your face into the frame and open your mouth.<br />
-        Each mouth opening will trigger a whale call.
+        Read.<br />
       </div>
     </div>
 
+    <!-- RIGHT -->
     <div id="right">
-        <div id="essay-container">
+      <div id="essay-container">
+        <div class="essay">
             <div class="essay">
-                <div class="essay">
-                    <div class="essay-title">A List of Uses for a Whale’s Body:</div>
-                    <p>
-                      For Light<br>
-                      For Soap <br>
-                      For Lubricant <br>
-                      In Margarine, particularly popular in Britain<br>
-                      In Cosmetics<br>
-                      For Leather softening<br>
-                      As food<br>
-                      For perfume, derived from ambergris<br>
-                      In Nitroglycerin for explosives<br>
-                      As a Cold War-era proxy for dominance of the Bering Strait. <br>
-                      In crayons<br>
-                      To swallow Jonah<br>
-                      To teach Jonah a lesson<br>
-                      To spit him back out<br>
-                      For Scrismshaw art (walking canes, knitting swifts, corset boning, etc.)<br>
-                      To offer life as a gift to Inuit hunters<br>
-                      To drive the Cape Verdean Diaspora to southern New England<br>
-                      To fulfill a quota in the Soviet five-year plans<br>
-                      In car transmission oil, for its heat resistance <br>
-                      As nuclear submarine lubricant, for its heat resistance<br>
-                      To sing<br>
-                      To nurse a whale calf<br>
-                      To push a whale calf to the surface for its first breath<br>
-                    </p>
-                  </div>
-    
-             <div class="essay">
-            <div class="essay-title">Interlude</div>
-              <p>
-    
-                
-                In the 19th century, the human world was ruled by the whale. Pre-kerosene, we’d found a clean, mostly-renewable combustible: whale oil. To hunt and refine a whale was to lubricate the gears turning the industrial revolution, to make a crayon, to alleviate trench foot in the First World War, and, critically, to light a room. It was sustainability avant la lettre, the original green economy, until they were overhunted to the brink of extinction.
-                <br>
-                <br>
-                When a whale was caught, the first order of business was cutting in: opening the carcass to remove the oil-ridden blubber. The body floated beside the ship. Above it, men leaned out with rod-mounted knives, poking through hide and peeling the skin in a spiral, as if they were skinning an apple for pie.
-                <br>
-                <br>
-    
-                This sheet is the blanket: the oily blubber wrapped around the whale, sealing her heat as she dives into the cold of the sea. In Moby-Dick, Queequeg and Ishmael share a blanket and call it kinship. On the ship, the whale is killed for hers. 
-                <br>
-              </p>
-              <!-- your essay continues here… -->
-            </div>
-    
-            <div class="essay"><div class="essay-title">In cutting up the whale,</div>
-    
-            I watched a two minute YouTube video aptly titled Cutting up a humpback whale - Dec. '15 in which a team cut up a humpback whale (in December ‘15), then pulled out the intestines like a sailor’s rope, then plopped each organ into a dumpster, then I gagged. In the soup of her innards, there was yellow gall, hardened blubber, and what I could only assume was the vomit of some volunteer in the slicing.
+                <div class="essay-title">A List of Uses for a Whale’s Body:</div>
+                <p>
+                  For Light<br>
+                  For Soap <br>
+                  For Lubricant <br>
+                  In Margarine, particularly popular in Britain<br>
+                  In Cosmetics<br>
+                  For Leather softening<br>
+                  As food<br>
+                  For perfume, derived from ambergris<br>
+                  In Nitroglycerin for explosives<br>
+                  As a Cold War-era proxy for dominance of the Bering Strait. <br>
+                  In crayons<br>
+                  To swallow Jonah<br>
+                  To teach Jonah a lesson<br>
+                  To spit him back out<br>
+                  For Scrismshaw art (walking canes, knitting swifts, corset boning, etc.)<br>
+                  To offer life as a gift to Inuit hunters<br>
+                  To drive the Cape Verdean Diaspora to southern New England<br>
+                  To fulfill a quota in the Soviet five-year plans<br>
+                  In car transmission oil, for its heat resistance <br>
+                  As nuclear submarine lubricant, for its heat resistance<br>
+                  To sing<br>
+                  To nurse a whale calf<br>
+                  To push a whale calf to the surface for its first breath<br>
+                </p>
+              </div>
+
+         <div class="essay">
+        <div class="essay-title">Interlude</div>
+          <p>
+
+            
+            In the 19th century, the human world was ruled by the whale. Pre-kerosene, we’d found a clean, mostly-renewable combustible: whale oil. To hunt and refine a whale was to lubricate the gears turning the industrial revolution, to make a crayon, to alleviate trench foot in the First World War, and, critically, to light a room. It was sustainability avant la lettre, the original green economy, until they were overhunted to the brink of extinction.
             <br>
-            In a small town in North Dakota, a young girl could be sitting at a table manufactured in a whale-oil factory drawing with whale-oil crayons by the whale-oil light of a lamp and she would never know the source. If she saw the corkscrew of the whale, its blanket being taken, would she think of her own baby blanket or would she think of slicing up apples? If I showed her Cutting up a humpback whale - Dec. '15, would she also gag a bit, or would she ask if “‘15” means 1915 or 2015?
             <br>
-            Would she grab the knife if she knew it meant light for her drawing, or perhaps the production of a few million more crayons (surely one pack could be for her? If she became a liberal college student, how would she feel knowing that whale’s grease still lubricates warhead-carrying submarine channels? 
+            When a whale was caught, the first order of business was cutting in: opening the carcass to remove the oil-ridden blubber. The body floated beside the ship. Above it, men leaned out with rod-mounted knives, poking through hide and peeling the skin in a spiral, as if they were skinning an apple for pie.
             <br>
-            Robert F. Kennedy Jr. famously chainsawed the head off of a whale. Did he corkscrew it into the blanket sheet first, then render it in a large vat? He followed the handbook of cutting-in quite well: slice the body into manageable pieces, attach to the ship or minivan, then bring ashore. 
             <br>
-            Would the girl be disappointed he didn’t use any oil? That’s less crayon or soap or light for the rest of us. 
+
+            This sheet is the blanket: the oily blubber wrapped around the whale, sealing her heat as she dives into the cold of the sea. In Moby-Dick, Queequeg and Ishmael share a blanket and call it kinship. On the ship, the whale is killed for hers. 
             <br>
-            Maybe she’d light a candle in its memory (a soy-based one with a label that says Ocean Breeze). She may watch the wax melt, the flame flicker, the air fill with the ghost of synthetic salt. 
-            <br>
-            The whale would still be burning somewhere else in the supply chain.
-    
-    
-            </div>
-    
-          </div>
+          </p>
+          <!-- your essay continues here… -->
+        </div>
+
+        <div class="essay"><div class="essay-title">In cutting up the whale,</div>
+
+        I watched a two minute YouTube video aptly titled Cutting up a humpback whale - Dec. '15 in which a team cut up a humpback whale (in December ‘15), then pulled out the intestines like a sailor’s rope, then plopped each organ into a dumpster, then I gagged. In the soup of her innards, there was yellow gall, hardened blubber, and what I could only assume was the vomit of some volunteer in the slicing.
+        <br>
+        In a small town in North Dakota, a young girl could be sitting at a table manufactured in a whale-oil factory drawing with whale-oil crayons by the whale-oil light of a lamp and she would never know the source. If she saw the corkscrew of the whale, its blanket being taken, would she think of her own baby blanket or would she think of slicing up apples? If I showed her Cutting up a humpback whale - Dec. '15, would she also gag a bit, or would she ask if “‘15” means 1915 or 2015?
+        <br>
+        Would she grab the knife if she knew it meant light for her drawing, or perhaps the production of a few million more crayons (surely one pack could be for her? If she became a liberal college student, how would she feel knowing that whale’s grease still lubricates warhead-carrying submarine channels? 
+        <br>
+        Robert F. Kennedy Jr. famously chainsawed the head off of a whale. Did he corkscrew it into the blanket sheet first, then render it in a large vat? He followed the handbook of cutting-in quite well: slice the body into manageable pieces, attach to the ship or minivan, then bring ashore. 
+        <br>
+        Would the girl be disappointed he didn’t use any oil? That’s less crayon or soap or light for the rest of us. 
+        <br>
+        Maybe she’d light a candle in its memory (a soy-based one with a label that says Ocean Breeze). She may watch the wax melt, the flame flicker, the air fill with the ghost of synthetic salt. 
+        <br>
+        The whale would still be burning somewhere else in the supply chain.
+
+
+        </div>
+
+      </div>
     </div>
   </div>
 
-  <!-- your existing scripts (face-api, auto-scroll, whale sounds, etc.) go here unchanged -->
+  <!-- face-api.js -->
   <script defer src="https://unpkg.com/face-api.js@0.22.2/dist/face-api.min.js"></script>
   <script>
     const video = document.getElementById('video');
@@ -255,7 +229,7 @@
     // requestAnimationFrame(autoScroll);
 
     let acc = 0;
-    const SCROLL_SPEED = 0.015;
+    const SCROLL_SPEED = 0.01;
 
     function autoScroll() {
     acc += SCROLL_SPEED;
