@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Whale Reader</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background-color: #0000aa; /* bad blue background */
+      font-family: Arial, sans-serif;
+    }
+
+    #container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      color: #ffff00; /* yellow text */
+    }
+
+    /* Left: camera + instructions */
+    #left {
+      width: 40vw;
+      padding: 10px;
+      border-right: 4px solid #ff00ff; /* ugly magenta divider */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    #video {
+      width: 100%;
+      max-width: 480px;
+      background: #222;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: center;
+      color: #00ff00; /* bad green text */
+    }
+
+    #controls {
+      margin-top: 10px;
+    }
+
+    button {
+      background-color: #ff00ff;
+      color: #ffff00;
+      border: 2px solid #ffff00;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #ffff00;
+      color: #ff00ff;
+    }
+
+    /* Right: auto-scrolling essays */
+    #right {
+      width: 60vw;
+      padding: 20px;
+      overflow: hidden; /* container fixed, inner scrolls */
+      position: relative;
+    }
+
+    #essay-container {
+      height: 100%;
+      width: 100%;
+      overflow-y: scroll;
+      padding-right: 10px;
+      scroll-behavior: smooth;
+    }
+
+    .essay {
+      margin-bottom: 40px;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    .essay-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      color: #ff00ff;
+    }
+
+    /* make the scrollbar ugly too */
+    #essay-container::-webkit-scrollbar {
+      width: 12px;
+    }
+    #essay-container::-webkit-scrollbar-track {
+      background: #0000aa;
+    }
+    #essay-container::-webkit-scrollbar-thumb {
+      background: #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <!-- LEFT: camera + whale sound -->
+    <div id="left">
+      <h1 style="margin-bottom:10px; color:#ffff00; font-size:20px;">Whale Reading Interface</h1>
+      <video id="video" autoplay muted playsinline></video>
+      <div id="controls">
+        <button id="startBtn">Start Camera &amp; Whale</button>
+      </div>
+      <div id="status">
+        Bring your face into the frame and open your mouth.<br />
+        Each mouth opening will trigger a whale call.
+      </div>
+      <!-- hidden audio element for whale sound -->
+      
+    </div>
+
+    <!-- RIGHT: auto-scrolling essays -->
+    <div id="right">
+      <div id="essay-container">
+        <!-- Replace these with your actual essays -->
+        <div class="essay">
+          <div class="essay-title">How to Cut Up a Whale</div>
+          <p>
+            i.
+            In the 19th century, the human world was ruled by the whale. Pre-kerosene, we’d found a clean, mostly-renewable combustible: whale oil. To hunt and refine a whale was to lubricate the gears turning the industrial revolution, to make a crayon, to alleviate trench foot in the First World War, and, critically, to light a room. It was sustainability avant la lettre, the original green economy, until they were overhunted to the brink of extinction.
+            <br>
+            <br>
+            When a whale was caught, the first order of business was cutting in: opening the carcass to remove the oil-ridden blubber. The body floated beside the ship. Above it, men leaned out with rod-mounted knives, poking through hide and peeling the skin in a spiral, as if they were skinning an apple for pie.
+            <br>
+            <br>
+
+            This sheet is the blanket: the oily blubber wrapped around the whale, sealing her heat as she dives into the cold of the sea. In Moby-Dick, Queequeg and Ishmael share a blanket and call it kinship. On the ship, the whale is killed for hers. 
+            <br>
+
+            <br>
+            <br>
+            ii.
+            I watched a two minute YouTube video aptly titled Cutting up a humpback whale - Dec. '15 in which a team cut up a humpback whale (in December ‘15), then pulled out the intestines like a sailor’s rope, then plopped each organ into a dumpster, then I gagged. In the soup of her innards, there was yellow gall, hardened blubber, and what I could only assume was the vomit of some volunteer in the slicing.
+            <br>
+            <br>
+
+            In a small town in North Dakota, a young girl could be sitting at a table manufactured in a whale-oil factory drawing with whale-oil crayons by the whale-oil light of a lamp and she would never know the source. If she saw the corkscrew of the whale, its blanket being taken, would she think of her own baby blanket or would she think of slicing up apples? If I showed her Cutting up a humpback whale - Dec. '15, would she also gag a bit, or would she ask if “‘15” means 1915 or 2015?
+            <br>
+            <br>
+
+            Would she grab the knife if she knew it meant light for her drawing, or perhaps the production of a few million more crayons (surely one pack could be for her? If she became a liberal college student, how would she feel knowing that whale’s grease still lubricates warhead-carrying submarine channels? 
+            <br>
+            <br>
+
+            Robert F. Kennedy Jr. famously chainsawed the head off of a whale. Did he corkscrew it into the blanket sheet first, then render it in a large vat? He followed the handbook of cutting-in quite well: slice the body into manageable pieces, attach to the ship or minivan, then bring ashore. 
+            <br>
+            <br>
+
+            Would the girl be disappointed he didn’t use any oil? That’s less crayon or soap or light for the rest of us. 
+            <br>
+            <br>
+
+            Maybe she’d light a candle in its memory (a soy-based one with a label that says Ocean Breeze). She may watch the wax melt, the flame flicker, the air fill with the ghost of synthetic salt. 
+            <br>
+            <br>
+
+            The whale would still be burning somewhere else in the supply chain.
+          </p>
+        </div>
+
+        <div class="essay">
+          <div class="essay-title">A List of Uses for a Whale’s Body:</div>
+          <p>
+            For Light<br><br>
+            For Soap <br><br>
+            For Lubricant <br><br>
+            In Margarine, particularly popular in Britain<br><br>
+            In Cosmetics<br><br>
+            For Leather softening<br><br>
+            As food<br><br>
+            For perfume, derived from ambergris<br><br>
+            In Nitroglycerin for explosives<br><br>
+            As a Cold War-era proxy for dominance of the Bering Strait. <br><br>
+            In crayons<br><br>
+            To swallow Jonah<br><br>
+            To teach Jonah a lesson<br><br>
+            To spit him back out<br><br>
+            For Scrismshaw art (walking canes, knitting swifts, corset boning, etc.)<br><br>
+            To offer life as a gift to Inuit hunters<br><br>
+            To drive the Cape Verdean Diaspora to southern New England<br><br>
+            To fulfill a quota in the Soviet five-year plans<br><br>
+            In car transmission oil, for its heat resistance <br><br>
+            As nuclear submarine lubricant, for its heat resistance<br><br>
+            To sing<br><br>
+            To nurse a whale calf<br><br>
+            To push a whale calf to the surface for its first breath<br><br>
+          </p>
+        </div>
+
+        <div class="essay">
+          <div class="essay-title">Essay 3: Bad Colors</div>
+          <p>
+            This is a placeholder for Essay 3. Replace this with your third essay.
+            The clash of blue and yellow refuses comfort, insisting that reading is
+            also a form of glare, a strain, a negotiation with the page.
+          </p>
+        </div>
+
+        <!-- Add more .essay blocks for additional essays -->
+      </div>
+    </div>
+  </div>
+
+  <!-- face-api.js for simple mouth-open detection -->
+  <script defer src="https://unpkg.com/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <script>
+    const video = document.getElementById('video');
+    const statusEl = document.getElementById('status');
+    const startBtn = document.getElementById('startBtn');
+    const whaleAudio = document.getElementById('whale-audio');
+    const essayContainer = document.getElementById('essay-container');
+
+    const whaleSounds = [
+    'web_whale_sounds/whale_00.wav',
+    'web_whale_sounds/whale_01.wav',
+    'web_whale_sounds/whale_02.wav',
+    // keep going to the last index printed from Python
+    ];
+
+    let whaleIndex = 0;
+
+    function playWhale() {
+      const audio = new Audio(whaleSounds[whaleIndex % whaleSounds.length]);
+      whaleIndex += 1; // or use Math.random() for random choice
+      audio.play().catch(() => {});
+    }
+    // --- RIGHT SIDE: slow auto scroll ---
+    const SCROLL_SPEED = 0.2; // pixels per frame; adjust to taste
+    function autoScroll() {
+      // if near bottom, loop back to top
+      if (essayContainer.scrollTop + essayContainer.clientHeight >= essayContainer.scrollHeight - 1) {
+        essayContainer.scrollTop = 0;
+      } else {
+        essayContainer.scrollTop += SCROLL_SPEED;
+      }
+      requestAnimationFrame(autoScroll);
+    }
+    // start auto scroll as soon as page loads
+    requestAnimationFrame(autoScroll);
+
+    // --- LEFT SIDE: webcam + mouth-open whale trigger ---
+
+    // Simple heuristic: distance between upper and lower lip / face width
+    function getMouthOpenRatio(landmarks) {
+      const topLip = landmarks.getMouth()[13];   // approximate upper inner lip
+      const bottomLip = landmarks.getMouth()[19]; // approximate lower inner lip
+      const leftFace = landmarks.getJawOutline()[0];
+      const rightFace = landmarks.getJawOutline()[16];
+
+      const mouthOpen = Math.hypot(
+        topLip.x - bottomLip.x,
+        topLip.y - bottomLip.y
+      );
+      const faceWidth = Math.hypot(
+        leftFace.x - rightFace.x,
+        leftFace.y - rightFace.y
+      );
+
+      return mouthOpen / faceWidth;
+    }
+
+    let mouthOpenLast = false;
+    const MOUTH_THRESHOLD = 0.08; // tweak if too sensitive / not sensitive enough
+
+    async function onPlay() {
+      if (video.paused || video.ended) {
+        requestAnimationFrame(onPlay);
+        return;
+      }
+
+      const detection = await faceapi
+        .detectSingleFace(
+          video,
+          new faceapi.TinyFaceDetectorOptions({
+            inputSize: 320,
+            scoreThreshold: 0.3
+          })
+        )
+        .withFaceLandmarks();  // this uses the faceLandmark68Net you loaded above
+
+      if (detection && detection.landmarks) {
+        const ratio = getMouthOpenRatio(detection.landmarks);
+        const isOpen = ratio > MOUTH_THRESHOLD;
+        // ... your existing logic calling playWhale()
+        console.log('yasss')
+      } else {
+        statusEl.textContent = 'Face not detected. Move closer or adjust lighting.';
+        mouthOpenLast = false;
+      }
+
+      requestAnimationFrame(onPlay);
+    }
+
+    function playWhale() {
+      // restart from beginning for each trigger
+      whaleAudio.currentTime = 0;
+      whaleAudio.play().catch(() => {
+        // ignore autoplay errors; user probably hasn’t interacted yet
+      });
+    }
+
+    async function start() {
+      startBtn.disabled = true;
+      statusEl.textContent = 'Loading face detection models...';
+
+      // Load only what is needed: tiny face detector + landmarks
+      //const MODEL_URL = 'https://unpkg.com/face-api.js@0.22.2/weights';
+
+      const MODEL_URL = './weights';
+      await faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL);
+      await faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL);
+
+      statusEl.textContent = 'Starting camera...';
+
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { width: { ideal: 640 }, height: { ideal: 480 } },
+          audio: false
+        });
+        video.srcObject = stream;
+
+        video.onloadedmetadata = () => {
+          video.play();
+          statusEl.textContent =
+            'Camera running. Open your mouth to call the whale.';
+          requestAnimationFrame(onPlay);
+        };
+      } catch (err) {
+        console.error(err);
+        statusEl.textContent =
+          'Could not access camera. Check permissions and reload.';
+        startBtn.disabled = false;
+      }
+    }
+
+    startBtn.addEventListener('click', start);
+  </script>
+</body>
+</html>
